@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Generics_Problems_567_
 {
@@ -19,6 +17,7 @@ namespace Generics_Problems_567_
             this.Items = new T[capacity];
             this.Capacity = capacity;
         }
+
         public GenericList()
             : this(DEFAULT_CAPACITY)
         {
@@ -36,7 +35,7 @@ namespace Generics_Problems_567_
             }
         }
 
-        public T this[int i] // indexer
+        public T this[int i]
         {
             get
             {
@@ -60,18 +59,18 @@ namespace Generics_Problems_567_
             set { this.count = value; }
         }
 
-
-        public void AddElement(T item) // adding elements to the list
+        public void AddElement(T item)
         {
             if (this.Count >= this.Items.Length)
             {
                 DoubleSize();
             }
+
             this.items[count] = item;
             this.Count++;
         }
 
-        private void DoubleSize() // auto-double array's capacity
+        private void DoubleSize()
         {
             int newSize = this.items.Length * 2;
             T[] doubledCapacity = new T[newSize];
@@ -85,45 +84,46 @@ namespace Generics_Problems_567_
             this.Capacity = Capacity * 2;
         }
 
-        public void RemoveElement(int position) // removing element by index
+        public void RemoveElement(int position)
         {
             int newSize = this.items.Length - 1;
             int newCount = 0;
             T[] newList = new T[newSize];
+
             for (int i = 0; i < position; i++)
             {
                 newList[i] = this.items[i];
                 newCount++;
             }
+
             for (int i = position; i < newSize; i++)
             {
                 newList[i] = this.Items[i + 1];
                 newCount++;
             }
+
             this.Items = newList;
             this.Count = newCount;
         }
 
-        public void InsertAt(int position, T item) // inserting element on given position
+        public void InsertAt(int position, T item)
         {
             T[] newList = new T[count + 1];
+
             for (int i = 0; i < count; i++)
             {
                 newList[i] = this.Items[i];
                 if (i == position)
                 {
                     newList[i] = item;
-                }
-                //if (i > position)
-                //{
-                //    newList[i] = this.Items[i - 1];
-                //}
+                }               
             }
+
             this.Items = newList;
             this.Count = this.Count + 1;
         }
 
-        public void ClearAll() // clearing list
+        public void ClearAll()
         {
             T[] newList = new T[DEFAULT_CAPACITY];
             this.Items = newList;
@@ -142,10 +142,11 @@ namespace Generics_Problems_567_
                     position = i;
                 }
             }
+
             return position;
         }
 
-        public override string ToString() // overriding ToString()
+        public override string ToString()
         {
             StringBuilder result = new StringBuilder();
 
@@ -158,12 +159,14 @@ namespace Generics_Problems_567_
                     result.Append(", ");
                 }
             }
+
             return result.ToString();
         }
 
         public T Min()
         {
             T item = this.Items[0];
+
             for (int i = 1; i < this.Items.Count(); i++)
             {
                 if (item.CompareTo(this.Items[i]) > 0)
@@ -171,12 +174,14 @@ namespace Generics_Problems_567_
                     item = this.Items[i];
                 }
             }
+
             return item;
         }
 
         public T Max()
         {
             T item = this.Items[0];
+
             for (int i = 1; i < this.Items.Count(); i++)
             {
                 if (item.CompareTo(this.Items[i]) < 0)
@@ -184,8 +189,8 @@ namespace Generics_Problems_567_
                     item = this.Items[i];
                 }
             }
+
             return item;
-        }
-        
+        }        
     }
 }

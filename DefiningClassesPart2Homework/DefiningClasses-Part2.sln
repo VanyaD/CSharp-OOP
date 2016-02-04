@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics(Problems-567)", "Generics(Problems-567)\Generics(Problems-567).csproj", "{3BBA42AB-6B20-493B-806D-1715A5EEE68B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix(Problems-8910)", "Matrix(Problems-8910)\Matrix(Problems-8910).csproj", "{A2226E28-754F-4A01-A7EE-2B3515ADE974}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VersionAttribute(Problem11)", "VersionAttribute(Problem11)\VersionAttribute(Problem11).csproj", "{E4CE1D08-95E3-464C-9698-94B2A910B2F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Structure(Problems-1234)", "Structure(Problems-1234)\Structure(Problems-1234).csproj", "{E7858FBF-0E73-4B78-8583-EBFFC93A00F9}"
 EndProject
@@ -25,10 +23,6 @@ Global
 		{A2226E28-754F-4A01-A7EE-2B3515ADE974}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2226E28-754F-4A01-A7EE-2B3515ADE974}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2226E28-754F-4A01-A7EE-2B3515ADE974}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E4CE1D08-95E3-464C-9698-94B2A910B2F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E4CE1D08-95E3-464C-9698-94B2A910B2F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E4CE1D08-95E3-464C-9698-94B2A910B2F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E4CE1D08-95E3-464C-9698-94B2A910B2F9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E7858FBF-0E73-4B78-8583-EBFFC93A00F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E7858FBF-0E73-4B78-8583-EBFFC93A00F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7858FBF-0E73-4B78-8583-EBFFC93A00F9}.Release|Any CPU.ActiveCfg = Release|Any CPU

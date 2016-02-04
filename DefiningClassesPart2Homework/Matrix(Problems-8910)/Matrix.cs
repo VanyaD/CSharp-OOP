@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Matrix_Problems_8910_
 {
@@ -10,17 +6,18 @@ namespace Matrix_Problems_8910_
     {
         private int width;
         private int height;
-        private T[,] items;
+        private T[,] matrix;
 
         public Matrix(int width, int height)
         {
-            this.Items = new T[width, height];
+            this.matrix = new T[width, height];
             this.Width = width;
             this.Height = height;
         }
+
         public Matrix(int size)
         {
-            this.Items = new T[width, height];
+            this.matrix = new T[width, height];
             this.Width = size;
             this.Height = size;
         }
@@ -37,6 +34,7 @@ namespace Matrix_Problems_8910_
                 {
                     throw new ArgumentOutOfRangeException("Width cannot be less or equal to zero");
                 }
+
                 this.width = value;
             }
         }
@@ -53,19 +51,8 @@ namespace Matrix_Problems_8910_
                 {
                     throw new ArgumentOutOfRangeException("Height cannot be less or equal to zero");
                 }
-                this.height = value;
-            }
-        }
 
-        public T[,] Items
-        {
-            get
-            {
-                return this.items;
-            }
-            private set
-            {
-                this.items = value;
+                this.height = value;
             }
         }
 
@@ -73,14 +60,25 @@ namespace Matrix_Problems_8910_
         {
             get
             {
-                return this.items[row, col];
+                if ((row < 0 || row >= this.Width) ||
+                    (col < 0 || col >= this.Height))
+                {
+                    throw new IndexOutOfRangeException();
+                }
+
+                return this.matrix[row, col];
             }
-            private set
+            set
             {
-                this.items[row, col] = value;
+                if ((row < 0 || row >= this.Width) ||
+                    (col < 0 || col >= this.Height))
+                {
+                    throw new IndexOutOfRangeException();
+                }
+
+                this.matrix[row, col] = value;
             }
         }
-
         
         public static Matrix<T> operator+(Matrix<T> m1, Matrix<T> m2)
         {
@@ -93,6 +91,7 @@ namespace Matrix_Problems_8910_
                    result[row, col] = (dynamic)m1[row, col] + m2[row, col];
                }
            }
+
            return result;
         }
 
@@ -107,20 +106,33 @@ namespace Matrix_Problems_8910_
                     result[row, col] = (dynamic)m1[row, col] - m2[row, col];
                 }
             }
+
             return result;
         }
 
         public static Matrix<T> operator *(Matrix<T> m1, Matrix<T> m2)
         {
-            Matrix<T> result = new Matrix<T>(m1.width, m1.height);
-
-            for (int row = 0; row < result.height; row++)
+            if (m1.Height != m2.Width)
             {
-                for (int col = 0; col < result.width; col++)
+                throw new Exception("These matrices cannot be multiplied.");
+            }
+
+            Matrix<T> result = new Matrix<T>(m1.Height, m2.Width);
+            T temp;
+
+            for (int matrixRow = 0; matrixRow < result.Height; matrixRow++)
+            {
+                for (int matrixCol = 0; matrixCol < result.Width; matrixCol++)
                 {
-                    result[row, col] = (dynamic)m1[row, col] * m2[row, col];
+                    temp = (dynamic)0;
+                    for (int index = 0; index < result.Width; index++)
+                    {
+                        temp += (dynamic)m1[matrixRow, index] * m2[index, matrixCol];
+                    }
+                    result[matrixRow, matrixCol] = (dynamic)temp;
                 }
             }
+
             return result;
         }
     }

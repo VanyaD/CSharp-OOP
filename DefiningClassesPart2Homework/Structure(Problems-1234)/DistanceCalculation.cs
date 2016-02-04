@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Structure
 {
@@ -34,7 +31,6 @@ namespace Structure
                 this.points.Add(new Point3D());
                 return this.points;
             }
-
         }
 
         public struct Point3D
@@ -60,6 +56,7 @@ namespace Structure
                     return startPoint;
                 }
             }
+
             public int X
             {
                 get
@@ -117,6 +114,7 @@ namespace Structure
                 distance = value;
             }
         }
+
         public static float CalculateDistance(Point3D point1, Point3D point2)
         {
             float deltaX = point1.X - point2.X;
