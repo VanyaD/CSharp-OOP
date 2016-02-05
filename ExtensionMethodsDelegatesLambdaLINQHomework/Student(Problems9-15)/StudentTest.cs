@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Student_Problems9_15_
 {
@@ -89,10 +87,8 @@ namespace Student_Problems9_15_
             //         MarksList = x.Marks 
             //     }); 
  
- 
              Console.WriteLine("Students that have exactly two poor marks, each in new anonymous class with " + 
                                "properties Fullname and MarksList:\n"); 
- 
  
              //foreach (var student in studentsWithTwoTwos) 
              //{ 
@@ -100,7 +96,6 @@ namespace Student_Problems9_15_
              //    Console.WriteLine("Marks: {0}", string.Join(", ", student.MarksList)); 
              //    Console.WriteLine(); 
              //} 
-
        // }
         }
     }

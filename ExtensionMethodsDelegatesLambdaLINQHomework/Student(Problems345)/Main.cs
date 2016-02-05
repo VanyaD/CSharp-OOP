@@ -1,6 +1,4 @@
-﻿
-
-// Problem 3. First before last
+﻿// Problem 3. First before last
 // • Write a method that from a given array of students finds all students whose 
 // first name is before its last name alphabetically.
 // • Use LINQ query operators.
@@ -15,7 +13,7 @@ namespace _03.FirstBeforeLast
     {
         static void Main()
         {
-            Student[] studentsArray = 
+            Student[] studentsArray =
             {
                 new Student("Vanya", "Karaasenova", 20),
                 new Student("Emil", "Karaasenov", 21),
@@ -24,54 +22,39 @@ namespace _03.FirstBeforeLast
                 new Student("Maya", "Dobreva", 36)
             };
 
-            //Student[] studentsArrayTest = new Student[]
-            //{
-            //    new Student { FirstName = "Vanya", LastName = "Karaasenova", Age = 20},
-            //    new Student {FirstName = "Emil", LastName = "Karaasenov", Age = 30},
-            //    new Student {FirstName = "Maya", LastName = "Dobreva", Age = 36}
-            //    new Student {FirstName = "Emil", LastName = "Biserov", Age = 30},
-            //    new Student {FirstName = "Maya", LastName = "Dobreva", Age = 36}
-            //}; 
-
             Console.WriteLine("All students:");
 
             for (int i = 0; i < studentsArray.Length; i++)
             {
                 Console.WriteLine("Student " + (i + 1) + ": {0}", studentsArray[i]);
             }
+
             Console.WriteLine();
 
-            // Problem 3 First before last
-            // • Write a method that from a given array of students finds all students whose first name 
-            // is before its last name alphabetically.
-            // • Use LINQ query operators.
+            Console.WriteLine("Task 3. Students whose first name is before their last name:");
 
-            Console.WriteLine("Students whose first name is before their last name:");
             var result = FirstNameBeforeLast(studentsArray);
             foreach (Student student in result)
             {
                 Console.WriteLine("Student" + ": {0}", student);
             }
-            Console.WriteLine();
+
+            Console.WriteLine("----------");
 
             // Problem 4. Age range
             // • Write a LINQ query that finds the first name and last name of all students with age between 18 and 24.
 
-            Console.WriteLine("All students with age between 18 and 24:");
-            var resultProblem4 = FindStudentsWithAgeBetween18And24(studentsArray);
+            Console.WriteLine("Task 4. All students with age between 18 and 24:");
+            FindStudentsWithAgeBetween18And24(studentsArray);
 
-            foreach (Student student in resultProblem4)
-            {
-                Console.WriteLine("Student" + ": {0}", student);
-            }
-            Console.WriteLine();
+            Console.WriteLine("-----------");
 
             // Problem 5. Order students
             // • Using the extension methods  OrderBy()  and  ThenBy()  with lambda expressions sort the students by
             // first name and last name in descending order.
             // • Rewrite the same with LINQ.
 
-            Console.WriteLine("Students sorted by first and last name in descending order:");
+            Console.WriteLine("Task 5. Students sorted by first and last name in descending order:");
             var resultProblem5 = SortStudents(studentsArray);
 
             foreach (Student student in resultProblem5)
@@ -92,7 +75,7 @@ namespace _03.FirstBeforeLast
             }
         }
 
-        private static IEnumerable<Student> SortStudents(Student[] studentsArray) // using Lambda expressions
+        private static IEnumerable<Student> SortStudents(Student[] studentsArray)
         {
             var resultProblem5 = studentsArray
                 .OrderByDescending(st => st.FirstName)
@@ -102,15 +85,16 @@ namespace _03.FirstBeforeLast
             return resultProblem5;
         }
 
-        private static IEnumerable<Student> FindStudentsWithAgeBetween18And24(Student[] studentsArray)
+        private static void FindStudentsWithAgeBetween18And24(Student[] studentsArray)
         {
-            var resultProblem4 = studentsArray
+            var result = studentsArray
                 .Where(st => ((st.Age > 18) && (st.Age < 24)))
-                .Select(st => new Student { FirstName = st.FirstName, LastName = st.LastName })
                 .ToArray();
 
-            return resultProblem4;
-
+            foreach (Student student in result)
+            {
+                Console.WriteLine(student.FirstName + " " + student.LastName);
+            }
         }
 
         private static IEnumerable<Student> FirstNameBeforeLast(Student[] studentsArray)
@@ -118,6 +102,7 @@ namespace _03.FirstBeforeLast
             var result = studentsArray
              .Where(st => st.FirstName.CompareTo(st.LastName) < 0)
              .ToArray();
+
             return result;
         }
     }

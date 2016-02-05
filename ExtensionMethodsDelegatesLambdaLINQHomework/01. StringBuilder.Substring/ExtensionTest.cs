@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace _01.Str.Substring
 {
@@ -14,10 +11,7 @@ namespace _01.Str.Substring
             test.Append("Vanya Karaasenova");
             StringBuilder result = new StringBuilder();
             result = test.Substring(6, 3);
-            Console.WriteLine(result);
-
-            
-            
+            Console.WriteLine(result);           
         }
     }
 }

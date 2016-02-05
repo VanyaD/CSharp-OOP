@@ -15,7 +15,6 @@ namespace _03.FirstBeforeLast
         public Student(string firstName, string lastName, int age)
             : this(firstName, lastName)
         {
-
             this.age = age;
         }
 
@@ -37,6 +36,7 @@ namespace _03.FirstBeforeLast
                 {
                     throw new ArgumentException("Name cannot be null or empty");
                 }
+
                 this.firstName = value;
             }
         }
@@ -53,6 +53,7 @@ namespace _03.FirstBeforeLast
                 {
                     throw new ArgumentException("Name cannot be null or empty");
                 }
+
                 this.lastName = value;
             }
         }
@@ -69,6 +70,7 @@ namespace _03.FirstBeforeLast
                 {
                     throw new ArgumentOutOfRangeException("Age cannot be less or equal to zero");
                 }
+
                 this.age = value;
             }
         }
@@ -76,8 +78,7 @@ namespace _03.FirstBeforeLast
         public override string ToString()
         {
             string s = Age.ToString();
-            return this.firstName + " " + this.lastName + ", " + s;
+            return this.firstName + " " + this.lastName + ", " + s + " years old";
         }
-
     }
 }

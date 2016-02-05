@@ -18,9 +18,8 @@ namespace _02.IEnumerableExtensions
                 Console.WriteLine(tests[i]);
             }
 
-            Console.WriteLine(tests.SumIt());
+            Console.WriteLine(tests.Sum());
             Console.WriteLine(tests.Product());
-
         }
     }
 }

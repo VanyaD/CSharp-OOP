@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 // Problem 1. StringBuilder.Substring
 // • Implement an extension method  Substring(int index, int length) for the class  
@@ -10,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace _01.Str.Substring
 {
-    public static class ExtensionClass
+    public static class MyExtensions
     {
         public static StringBuilder Substring(this StringBuilder str, int index, int length)
         {
             StringBuilder result = new StringBuilder();
             string temp = str.ToString();
-            string stringRes = temp.Substring(index, length);
-            result.Append(stringRes);
+            string stringResult = temp.Substring(index, length);
+            result.Append(stringResult);
 
             return result;
         }
