@@ -8,9 +8,7 @@
 
         public override double CalculateSurface()
         {
-            double rectangleSurface = 0;
-            rectangleSurface = this.Height * this.Width;
-
+            double rectangleSurface = this.Height * this.Width;
             return rectangleSurface;
         }
     }

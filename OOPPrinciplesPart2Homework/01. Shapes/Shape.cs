@@ -6,15 +6,11 @@
     {
         private double width;
         private double height;
-      
-        public Shape()
-        {
-        }
 
-        public Shape(double width)
+        public Shape(double size)
         {
-            this.Width = width;
-            this.Height = width;
+            this.Width = size;
+            this.Height = size;
         }
 
         public Shape(double width, double height) : this(width)
@@ -31,6 +27,7 @@
                 {
                     throw new ArgumentOutOfRangeException("Height cannot be less or equal to zero");
                 }
+
                 height = value; 
             }
         }
@@ -44,6 +41,7 @@
                 {
                     throw new ArgumentOutOfRangeException("Width cannot be less or equal to zero");
                 } 
+
                 width = value;
             }
         }

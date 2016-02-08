@@ -25,6 +25,7 @@
                 {
                     throw new ArgumentOutOfRangeException("Name should be at least five letters long");
                 }
+
                 fullName = value; 
             }
         }
@@ -38,6 +39,7 @@
                 {
                     throw new ArgumentOutOfRangeException("ID should be at least 6 digits");
                 }
+
                 id = value; 
             }
         }

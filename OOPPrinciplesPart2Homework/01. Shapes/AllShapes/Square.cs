@@ -4,14 +4,13 @@
     public class Square : Shape
     {
         
-        public Square(double size) : base (size, size)
+        public Square(double size) : base (size)
         {       
         }
 
         public override double CalculateSurface()
         {
             double squareSurface = this.Width * this.Width;
-
             return squareSurface;
         }
     }

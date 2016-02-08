@@ -2,15 +2,13 @@
 {
     public class Triangle : Shape
     {
-        public Triangle(double width, double height) : base(width, height)
+        public Triangle(double a, double height) : base(a, height)
         {
         }
 
         public override double CalculateSurface()
         {
-            double triangleSurface = 0;
-            triangleSurface = (this.Height * this.Width) / 2;
-
+            double triangleSurface = (this.Height * this.Width) / 2;
             return triangleSurface; 
         }
     }

@@ -1,23 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _02.BankAccounts
 {
-    class Program
+    public class Program
     {
-        static void Main()
+        public static void Main()
         {
             IndividualCustomer me = new IndividualCustomer("Vanya Karaasenova", "12555555");
             DepositAccount myDepositAccount = new DepositAccount(me);
-            Console.WriteLine(myDepositAccount.InterestRate);
+            Console.WriteLine("My deposit account interest rate: {0}", myDepositAccount.InterestRate);
             myDepositAccount.DepositMoney(50000);
-            Console.WriteLine(myDepositAccount.Balance);
+            Console.WriteLine("My deposit account balance: {0}", myDepositAccount.Balance);
             decimal result = myDepositAccount.CalculateMonthlyInterest();
-            Console.WriteLine(result);
-           
+            Console.WriteLine("My deposit account monthly interest: {0}", result);          
         }
     }
 }
